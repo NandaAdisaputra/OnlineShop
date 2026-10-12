@@ -7,6 +7,7 @@ import retrofit2.Response
 
 class UserRepository(private val apiService: ApiService) {
 
+    // Periode Fungsi Register: Menghubungkan permintaan pendaftaran akun ke endpoint API melalui ApiService secara suspend function
     suspend fun register(
         username: String,
         email: String,
@@ -16,6 +17,7 @@ class UserRepository(private val apiService: ApiService) {
         return apiService.registerUser(username, email, password, noTlp)
     }
 
+    // Periode Fungsi Login: Menghubungkan permintaan autentikasi login ke endpoint API melalui ApiService secara suspend function
     suspend fun login(
         username: String,
         password: String

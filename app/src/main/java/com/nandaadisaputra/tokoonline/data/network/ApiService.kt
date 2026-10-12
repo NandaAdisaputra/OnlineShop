@@ -7,6 +7,7 @@ import retrofit2.http.POST
 
 interface ApiService {
 
+    // Periode Endpoint Register: Mendefinisikan method HTTP POST dengan format URL encoded untuk pendaftaran pengguna baru ke server
     @FormUrlEncoded
     @POST("auth/register")
     suspend fun registerUser(
@@ -16,6 +17,7 @@ interface ApiService {
         @Field("no_tlp") noTlp: String
     ): Response<RegisterResponse>
 
+    // Periode Endpoint Login: Mendefinisikan method HTTP POST dengan format URL encoded untuk proses autentikasi pengguna
     @FormUrlEncoded
     @POST("auth/login")
     suspend fun loginUser(
